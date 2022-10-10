@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/School/Year 4/IMD4008/IMD4008_Tutorial4/app/src/main/res/layout/activity_main.xml" value="0.2863187588152327" />
-        <entry key="..\:/School/Year 4/IMD4008/IMD4008_Tutorial4/app/src/main/res/layout/fragment_settings.xml" value="0.4" />
+        <entry key="..\:/School/Year 4/IMD4008/IMD4008_Tutorial4/app/src/main/res/layout/fragment_dashboard.xml" value="0.4" />
+        <entry key="..\:/School/Year 4/IMD4008/IMD4008_Tutorial4/app/src/main/res/layout/fragment_home.xml" value="0.4" />
+        <entry key="..\:/School/Year 4/IMD4008/IMD4008_Tutorial4/app/src/main/res/layout/fragment_notifications.xml" value="0.4" />
+        <entry key="..\:/School/Year 4/IMD4008/IMD4008_Tutorial4/app/src/main/res/layout/fragment_settings.xml" value="0.264" />
         <entry key="..\:/School/Year 4/IMD4008/IMD4008_Tutorial4/app/src/main/res/menu/bottom_nav_menu.xml" value="0.4" />
       </map>
     </option>
