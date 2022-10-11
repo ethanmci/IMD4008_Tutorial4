@@ -33,11 +33,12 @@ public class HomeFragment extends Fragment {
         counter = root.findViewById(R.id.home_counter);
         increment = root.findViewById(R.id.home_button);
 
+        counter.setText(Integer.toString(homeViewModel.counter));
         increment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                count++;
-                counter.setText(String.valueOf(count));
+                homeViewModel.counter++;
+                counter.setText(String.valueOf(homeViewModel.counter));
             }
         });
 

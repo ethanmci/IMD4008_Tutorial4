@@ -11,12 +11,19 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.imd4008_tutorial4.R;
+import com.example.imd4008_tutorial4.ui.settings.SettingsFragment;
 
 public class SettingsFragment extends Fragment {
 
+    private SettingsFragment binding;
+
     private SettingsViewModel mViewModel;
+    private TextView counter;
+    private Button increment;
 
     public static SettingsFragment newInstance() {
         return new SettingsFragment();
@@ -31,8 +38,8 @@ public class SettingsFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
         mViewModel = new ViewModelProvider(this).get(SettingsViewModel.class);
-        // TODO: Use the ViewModel
     }
 
 }

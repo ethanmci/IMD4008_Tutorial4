@@ -32,11 +32,12 @@ public class NotificationsFragment extends Fragment {
         counter = root.findViewById(R.id.notification_counter);
         increment = root.findViewById(R.id.notification_button);
 
+        counter.setText(Integer.toString(notificationsViewModel.counter));
         increment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                count++;
-                counter.setText(String.valueOf(count));
+                notificationsViewModel.counter++;
+                counter.setText(String.valueOf(notificationsViewModel.counter));
             }
         });
 

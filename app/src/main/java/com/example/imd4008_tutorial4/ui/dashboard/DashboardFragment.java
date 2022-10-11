@@ -33,11 +33,12 @@ public class DashboardFragment extends Fragment {
         counter = root.findViewById(R.id.dashboard_counter);
         increment = root.findViewById(R.id.dashboard_button);
 
+        counter.setText(Integer.toString(dashboardViewModel.counter));
         increment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                count++;
-                counter.setText(String.valueOf(count));
+                dashboardViewModel.counter++;
+                counter.setText(String.valueOf(dashboardViewModel.counter));
             }
         });
 
