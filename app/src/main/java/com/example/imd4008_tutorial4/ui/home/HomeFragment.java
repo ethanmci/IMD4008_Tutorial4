@@ -16,19 +16,15 @@ import com.example.imd4008_tutorial4.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private HomeViewModel homeViewModel;
 
     private TextView counter;
     private Button increment;
-    int count = 0;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
-
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        homeViewModel = new ViewModelProvider(getActivity()).get(HomeViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         counter = root.findViewById(R.id.home_counter);
         increment = root.findViewById(R.id.home_button);
@@ -45,9 +41,4 @@ public class HomeFragment extends Fragment {
         return root;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    }
 }

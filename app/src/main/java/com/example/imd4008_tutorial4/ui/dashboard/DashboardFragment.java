@@ -16,21 +16,18 @@ import com.example.imd4008_tutorial4.databinding.FragmentDashboardBinding;
 
 public class DashboardFragment extends Fragment {
 
-    private FragmentDashboardBinding binding;
+    private DashboardViewModel dashboardViewModel;
 
     private TextView counter;
     private Button increment;
-    int count = 0;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        DashboardViewModel dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        dashboardViewModel = new ViewModelProvider(getActivity()).get(DashboardViewModel.class);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
-        counter = root.findViewById(R.id.dashboard_counter);
+        counter = root.findViewById(R.id.dashboard_counter_settings);
         increment = root.findViewById(R.id.dashboard_button);
 
         counter.setText(Integer.toString(dashboardViewModel.counter));
@@ -43,11 +40,5 @@ public class DashboardFragment extends Fragment {
         });
 
         return root;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
     }
 }

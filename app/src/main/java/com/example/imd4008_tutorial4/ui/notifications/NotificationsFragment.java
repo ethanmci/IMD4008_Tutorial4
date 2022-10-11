@@ -16,20 +16,16 @@ import com.example.imd4008_tutorial4.databinding.FragmentNotificationsBinding;
 
 public class NotificationsFragment extends Fragment {
 
-    private FragmentNotificationsBinding binding;
+    private NotificationsViewModel notificationsViewModel;
     private TextView counter;
     private Button increment;
-    int count = 0;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        NotificationsViewModel notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
+        notificationsViewModel = new ViewModelProvider(getActivity()).get(NotificationsViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
 
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
-
-        counter = root.findViewById(R.id.notification_counter);
+        counter = root.findViewById(R.id.notification_counter_settings);
         increment = root.findViewById(R.id.notification_button);
 
         counter.setText(Integer.toString(notificationsViewModel.counter));
@@ -42,11 +38,5 @@ public class NotificationsFragment extends Fragment {
         });
 
         return root;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
     }
 }
